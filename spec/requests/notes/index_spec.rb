@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe "GET /notes", type: :request do
+RSpec.describe "GET /notes", type: [:request, :database] do
   let(:notes) { app["persistence.rom"].relations[:notes] }
 
   before do
