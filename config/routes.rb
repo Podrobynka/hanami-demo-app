@@ -6,5 +6,6 @@ module Notebook
     get "/home/:id", to: "home.show"
     get "/notes", to: "notes.index"
     get "/notes/:id", to: "notes.show"
+    post "/notes", to: "notes.create"
   end
 end
