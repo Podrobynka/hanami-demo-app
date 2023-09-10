@@ -1,4 +1,13 @@
+# frozen_string_literal: true
+
 RSpec.describe "GET /notes", type: :request do
+  let(:notes) { app["persistence.rom"].relations[:notes] }
+
+  before do
+    notes.insert(title: "Note 1")
+    notes.insert(title: "Note 2")
+  end
+
   it "returns a list of notes" do
     get "/notes"
 
